@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import styles from './AdultCertification.scss';
 import classNames from 'classnames/bind';
+import { withRouter } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 class AdultCertification extends Component{
   render () {
-    const { onClick } = this.props;
+    const { onClick, history, onLinkClick } = this.props;
     const countries = [
       { id: 'USA',
         text: 'United States'
@@ -34,11 +35,17 @@ class AdultCertification extends Component{
           <div>
             <input type="checkbox" />Remember me for 30 days. I confirm that this is not a shared device. 
           </div>
-          <p>By accessing this site, you accept the Terms of Use and Privacy Policy.</p>
+          <p>By accessing this site, you accept the <span className={cx('spanLink')} onClick={() => {
+            onLinkClick();
+            history.push('/termAndPolicy');
+          }}>Terms of Use</span> and <span className={cx('spanLink')} onClick={() => {
+            onLinkClick();
+            history.push('/termAndPolicy');
+          }}>Privacy Policy.</span></p>
         </div>
       </div>
     );
   }
 }
 
-export default AdultCertification;
+export default withRouter(AdultCertification);

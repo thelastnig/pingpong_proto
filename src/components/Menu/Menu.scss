@@ -1,0 +1,35 @@
+@import '../../styles/utils.scss';
+.menu {
+  font-family: sans-serif;
+}
+
+.menu-item {
+  border-bottom: 1px solid #ddd;
+
+  p { 
+    display: block;
+    padding-left: 15px;
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+      background-color: #eee;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: black;
+    }
+  }
+
+}
+
+.active-menu-item {
+  background-color: #e8e8f9;
+}
+

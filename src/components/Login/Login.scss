@@ -45,13 +45,9 @@
       padding-left: 0.5rem;
       padding-right: 0.5rem;
       margin-bottom: 1rem;
-
-      .last {
-        margin-bottom: 0rem;
-      }
     }
 
-    .btnSignup {
+    .btnLogin {
       margin-top: 1rem;
       padding-top: 0.6rem;
       padding-bottom: 0.5rem;
@@ -76,43 +72,6 @@
   
       &:active {
           background: $oc-teal-7;
-      }
-    }
-
-    .btnCertification {
-      width: 200px;
-      height: 25px;
-      margin-left: 180px;
-      font-size: 0.8rem;
-      margin-bottom: 0.25rem;
-
-      background: $oc-teal-6;
-      color: white;
-  
-      text-align: center;
-  
-      cursor: pointer;
-      user-select: none;
-      transition: .2s all;
-      border: 0;
-      outline: 0;
-  
-      &:hover {
-          background: $oc-teal-5;
-      }
-  
-      &:active {
-          background: $oc-teal-7;
-      }
-    }
-
-    .passwordMatch {
-      margin-top: 0;
-      padding-top: 0;
-      font-size: 0.9rem;
-      color: $oc-pink-7;
-      &.isMatch {
-        color: $oc-blue-7;
       }
     }
   }

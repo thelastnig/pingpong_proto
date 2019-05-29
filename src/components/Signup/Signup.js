@@ -34,29 +34,34 @@ class Signup extends Component {
 
   render() {
     const { password, passwordConfirm, match } = this.state;
+    const { history } = this.props;
     return (
-      <div className={cx('sign-template')}>
-        <div>
-          <label for="email">E-mail</label>
-          <input type="text" id="email" name="email"/>
-          <button>E-mail Certification</button>
+      <div className={cx('positioner')}>
+        <div className={cx('logoWrapper')}> 
+          <p>
+            PingPong
+          </p>
         </div>
-        <div>
+        <div className={cx('content')}>
+          <h2>Sign up</h2>
+          <label for="email">E-mail</label>
+          <button className={cx('btnCertification')}>E-mail Certification</button>
+          <input type="text" id="email" name="email"/>
           <label for="certificationCode">Certification Code</label>
           <input type="text" id="certificationCode" name="certificationCode"/>
-        </div>
-        <div>
+
           <label for="password">Password</label>
           <input type="password" id="password" name="password" value={password} onChange={this.handleChangePassword}/>
-        </div>
-        <div>
+
           <label for="passwordConfirm">Password Confirm</label>
-          <input type="password" id="passwordConfirm" name="passwordConfirm" value={passwordConfirm} onChange={this.handleChangePassword}/>
+          <input type="password" id="passwordConfirm" name="passwordConfirm" className={cx('last')} value={passwordConfirm} onChange={this.handleChangePassword}/>
           <p className={cx('passwordMatch', {isMatch: match})} ref={(ref) => {this.passwordMatch=ref}} ></p>
+          <div>
+          <button className={cx('btnSignup')} onClick={ () => {
+            history.push('/signup2');
+          }}>NEXT</button>
         </div>
-        <h3>
-          <button>SIGN UP</button>
-        </h3>
+        </div>
       </div>
     );
   }
