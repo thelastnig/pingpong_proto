@@ -1,31 +1,88 @@
-@import '~open-color/open-color';
+@import '../../styles/utils.scss';
 
-.page-template {
-  margin-top: 5rem;
+.positioner {
   margin-left: auto;
   margin-right: auto;
   width: 500px;
   background: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  padding-top: 2rem;
 
-  @media(max-width: 768px) {
-    margin-top: 1rem;
-    width: calc(100% - 2rem);
-  }
-  h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: 0;
-  }
   .content {
-    margin-top: 2rem;
-  }
-  .spanLink {
-    color : $oc-blue-7;
-    cursor: pointer;
-    text-decoration: underline;
+    background: white;
+    padding: 1rem 2rem 2rem 2rem;
+    height: auto;
 
+    .logo {
+      font-size: 1.5rem;
+      color: $oc-teal-9;
+      font-weight: bold;
+    }
+
+    .welcome {
+      font-size: 1.5rem;
+      color: $oc-gray-7;
+      font-weight: bold;
+    }
+
+    label {
+      font-size: 1rem;
+      color: $oc-gray-6;
+      margin-bottom: 0.25rem;
+    }
+
+    select {
+      width: 100%;
+      border: 1px solid $oc-gray-3;
+      outline: none;
+      border-radius: 0px;
+      line-height: 2.5rem;
+      font-size: 1.2rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      color: $oc-gray-8;
+      font-size: 0.8rem;
+    }
+ 
+    .spanLink {
+      font-size: 1rem;
+      color : $oc-blue-7;
+      cursor: pointer;
+      text-decoration: underline;
+  
+    }
+
+    .btn {
+      padding-top: 0.6rem;
+      padding-bottom: 0.5rem;
+      width: 200px;
+  
+      background: $oc-gray-7;
+      color: white;
+  
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+  
+      cursor: pointer;
+      user-select: none;
+      transition: .2s all;
+      border: 0;
+      outline: 0;
+      
+      &.right {
+        margin-left: 1rem;
+      }
+      &:hover {
+          background: $oc-teal-5;
+      }
+  
+      &:active {
+          background: $oc-teal-7;
+      }
+    }
   }
 }

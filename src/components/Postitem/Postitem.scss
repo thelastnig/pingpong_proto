@@ -1,0 +1,45 @@
+@import '../../styles/utils.scss';
+
+.positioner {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  .title {
+    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    color: black;
+    border-bottom: 1px solid $oc-gray-5;
+
+  }
+
+  .buttom {
+    padding: 1rem;
+    width: 90%;
+    margin: 0 auto;
+
+  }
+  
+  span {
+    display: inline-block;
+    width: 200px;
+    margin-right: 2rem;
+    font-size: 0.8rem;
+
+    &.state {
+      color : $oc-orange-8;
+    }
+
+    &.answer {
+      font-weight: bold;
+      color : $oc-cyan-9;
+    }
+  }
+
+  
+}

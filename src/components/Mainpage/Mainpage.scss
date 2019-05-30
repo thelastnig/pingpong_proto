@@ -1,0 +1,117 @@
+@import '../../styles/utils.scss';
+
+.positioner {
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+
+  .logoWrapper {
+    background: $oc-teal-7;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: white;
+      font-family: 'Rajdhani';
+      font-size: 2.4rem;
+      letter-spacing: 5px;
+      text-decoration: none;
+    }
+  }
+
+  .content {
+    background: white;
+    padding: 2rem;
+    height: auto;
+
+    label {
+      font-size: 1rem;
+      color: $oc-gray-6;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $oc-gray-3;
+      outline: none;
+      border-radius: 0px;
+      line-height: 2.5rem;
+      font-size: 1.2rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      margin-bottom: 1rem;
+
+      .last {
+        margin-bottom: 0rem;
+      }
+    }
+
+    .btnSignup {
+      margin-top: 1rem;
+      padding-top: 0.6rem;
+      padding-bottom: 0.5rem;
+      width:100%;
+  
+      background: $oc-teal-6;
+      color: white;
+  
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+  
+      cursor: pointer;
+      user-select: none;
+      transition: .2s all;
+      border: 0;
+      outline: 0;
+  
+      &:hover {
+          background: $oc-teal-5;
+      }
+  
+      &:active {
+          background: $oc-teal-7;
+      }
+    }
+
+    .btnCertification {
+      width: 200px;
+      height: 25px;
+      margin-left: 180px;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+
+      background: $oc-teal-6;
+      color: white;
+  
+      text-align: center;
+  
+      cursor: pointer;
+      user-select: none;
+      transition: .2s all;
+      border: 0;
+      outline: 0;
+  
+      &:hover {
+          background: $oc-teal-5;
+      }
+  
+      &:active {
+          background: $oc-teal-7;
+      }
+    }
+
+    .passwordMatch {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 0.9rem;
+      color: $oc-pink-7;
+      &.isMatch {
+        color: $oc-blue-7;
+      }
+    }
+  }
+}

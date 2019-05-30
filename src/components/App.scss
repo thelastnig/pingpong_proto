@@ -1,0 +1,48 @@
+@import '../styles/utils.scss';
+.upperWapper {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  width: 100%;
+
+  .upperInner {
+    width: 800px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+
+    .upperInnerLeft {
+      display: flex;
+    }
+
+    .logo {
+      margin-left: 2rem;
+      color: $oc-teal-9;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+  
+    button {
+      margin-left: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+  
+      background: $oc-teal-7;
+      color: white;
+  
+      text-align: center;
+      font-size: 0.8rem;
+      width: 5rem;
+      cursor: pointer;
+      user-select: none;
+      border: 0;
+      outline: 0;
+
+      &.login {
+        background: $oc-orange-9;
+      }
+    }
+  }
+}
+

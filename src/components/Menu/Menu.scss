@@ -1,35 +1,32 @@
 @import '../../styles/utils.scss';
 .menu {
-  font-family: sans-serif;
+  font-family: 'Rajdhani';
 }
 
 .menu-item {
-  border-bottom: 1px solid #ddd;
-
+  border-bottom: 1px solid $oc-teal-7;
+  
   p { 
     display: block;
     padding-left: 15px;
-    color: black;
+    color: $oc-teal-7;
+    font-weight: bold;
     text-decoration: none;
 
     &:hover {
-      color: black;
+      color: $oc-teal-3;
       text-decoration: none;
-      background-color: #eee;
+   
     }
 
     &:focus {
+      color: $oc-teal-3;
       text-decoration: none;
     }
 
-    &:visited {
-      color: black;
-    }
   }
 
 }
 
-.active-menu-item {
-  background-color: #e8e8f9;
-}
+
 
