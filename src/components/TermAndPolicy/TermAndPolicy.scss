@@ -1,0 +1,14 @@
+@import '../../styles/utils.scss';
+
+.positioner {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}

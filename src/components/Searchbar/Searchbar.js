@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 class Searchbar extends Component {
   render() {
-    const placeholder = 'Search your question';
+    const placeholder = 'Search question';
     return (
       <div className={cx('positioner')}>
         <div className={cx('inputWrap')}>

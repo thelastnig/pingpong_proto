@@ -4,16 +4,11 @@ import Mainpage from './Mainpage';
 import Signup from './Signup/Signup';
 import Signup2 from './Signup/Signup2';
 import Login from './Login';
-import Menu from './Menu';
+import Upperbar from './Upperbar';
 import TermAndPolicy from '../components/TermAndPolicy'
 import { Route } from 'react-router-dom';
 import Modal from 'react-awesome-modal';
-import CheeseburgerMenu from 'cheeseburger-menu'
-import HamburgerMenu from 'react-hamburger-menu'
-import styles from './App.scss';
-import classNames from 'classnames/bind';
 
-const cx = classNames.bind(styles);
 
 class App extends Component {
   state = {
@@ -46,14 +41,6 @@ class App extends Component {
     });
   }
 
-  openMenu() {
-    this.setState({ menuOpen: true })
-  }
-
-  closeMenu() {
-    this.setState({ menuOpen: false })
-  }
-
   render() {
   const { 
     handleClick,
@@ -67,35 +54,7 @@ class App extends Component {
         >
           <AdultCertification onClick={handleClick} onLinkClick={handleTermAndPolicy}/>
         </Modal>
-        <div className={cx('upperWapper')}>
-          <div className={cx('upperInner')}>
-            <div className={cx('upperInnerLeft')}>
-              <div>
-              <CheeseburgerMenu
-                isOpen={this.state.menuOpen}
-                closeCallback={this.closeMenu.bind(this)}>
-                <Menu closeCallback={this.closeMenu.bind(this)}/>
-              </CheeseburgerMenu>
-              <HamburgerMenu
-                isOpen={this.state.menuOpen}
-                menuClicked={this.openMenu.bind(this)}
-                width={24}
-                height={16}
-                strokeWidth={3}
-                rotate={0}
-                color='#087f5b'
-                borderRadius={0}
-                animationDuration={0.5}
-              />
-              </div>
-              <div className={cx('logo')}>PingPong</div>
-            </div>
-            <div>
-              <button className={cx('login')} >Log In</button>
-              <button>Sign Up</button>
-            </div>
-          </div>     
-        </div>
+        <Upperbar/>
         <Route exact path='/' component={Mainpage}/>
         <Route path='/signup1' component={Signup}/>
         <Route path='/signup2' component={Signup2}/>

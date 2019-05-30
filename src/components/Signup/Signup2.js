@@ -15,7 +15,7 @@ class Signup2 extends Component {
           </p>
         </div>
         <div className={cx('content')}>
-          <h2>Sign up</h2>
+          <h2>Sign Up</h2>
           <label for="nation">Nation</label>
           <input type="text" id="nation" name="nation"/>
           <label for="state">State</label>

@@ -33,6 +33,7 @@
       font-size: 1rem;
       color: $oc-gray-6;
       margin-bottom: 0.25rem;
+      
     }
 
     input {
@@ -109,11 +110,23 @@
     .passwordMatch {
       margin-top: 0;
       padding-top: 0;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: $oc-pink-7;
       &.isMatch {
         color: $oc-blue-7;
       }
     }
+
+    .verificationEmail {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 0.8rem;
+      color: $oc-pink-7;
+      &.isOK {
+        color: $oc-blue-7;
+      }
+    }
   }
+
+
 }

@@ -7,33 +7,60 @@ const cx = classNames.bind(styles);
 class Signup extends Component {
   state = {
     password: '',
-    passwordConfirm: '',
     match: false,
+    email: '',
+    emailOk: false,
   }
 
   handleChangePassword = (e) => {
     this.setState({
-      [e.target.name] : e.target.value
+      ...this.state,
+      password : e.target.value
     });
-    const { password, passwordConfirm } = this.state;
-    if(password && passwordConfirm && (password !== passwordConfirm)) {
-      this.passwordMatch.innerHTML = 'Don\'t Match';
+  } 
+
+  handleChangePasswordConfirm = (e) => {
+    const tempPassword = e.target.value;
+    const { password } = this.state;
+    if(password && tempPassword && (password !== tempPassword)) {
       this.setState({
+        ...this.state,
         match: false
       });
-    } else if (password && passwordConfirm && (password === passwordConfirm)) {
-      this.passwordMatch.innerHTML = 'Match';
+      this.passwordMatch.innerHTML = 'Don\'t Match';
+    } else if (password && tempPassword && (password === tempPassword)) {
       this.setState({
+        ...this.state,
         match: true
       });
-    } else {
-      this.passwordMatch.innerHTML = '';
-    }
+      this.passwordMatch.innerHTML = 'Match';
+    } 
   } 
+
+  handleVerificationEmail = (e) => {
+    const regExp =  /^([0-9a-zA-Z_.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    const tempEmail = e.target.value;
+
+    if (tempEmail.match(regExp) != null) {
+      this.verificationEmail.innerHTML = 'Valid E-mail';  
+      this.setState({
+        ...this.state,
+        email: tempEmail,
+        emailOk: true,
+      });   
+    } else {
+      this.verificationEmail.innerHTML = 'Not Valid E-mail';
+      this.setState({
+        ...this.state,
+        email: '',
+        emailOk: false,
+      });   
+    }
+  }
 
 
   render() {
-    const { password, passwordConfirm, match } = this.state;
+    const { password, match, emailOk } = this.state;
     const { history } = this.props;
     return (
       <div className={cx('positioner')}>
@@ -43,10 +70,11 @@ class Signup extends Component {
           </p>
         </div>
         <div className={cx('content')}>
-          <h2>Sign up</h2>
+          <h2>Sign Up</h2>
           <label for="email">E-mail</label>
           <button className={cx('btnCertification')}>E-mail Certification</button>
-          <input type="text" id="email" name="email"/>
+          <input type="text" id="email" name="email" onChange={this.handleVerificationEmail}/>
+          <p className={cx('verificationEmail', {isOK: emailOk})} ref={(ref) => {this.verificationEmail=ref}} ></p>
           <label for="certificationCode">Certification Code</label>
           <input type="text" id="certificationCode" name="certificationCode"/>
 
@@ -54,7 +82,7 @@ class Signup extends Component {
           <input type="password" id="password" name="password" value={password} onChange={this.handleChangePassword}/>
 
           <label for="passwordConfirm">Password Confirm</label>
-          <input type="password" id="passwordConfirm" name="passwordConfirm" className={cx('last')} value={passwordConfirm} onChange={this.handleChangePassword}/>
+          <input type="password" id="passwordConfirm" name="passwordConfirm" className={cx('last')} onChange={this.handleChangePasswordConfirm}/>
           <p className={cx('passwordMatch', {isMatch: match})} ref={(ref) => {this.passwordMatch=ref}} ></p>
           <div>
           <button className={cx('btnSignup')} onClick={ () => {
